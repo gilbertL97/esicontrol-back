@@ -15,6 +15,9 @@ export class User {
   @Column({ unique: true })
   email: string;
 
+  @Column({ default: true }) // Valor por defecto en la base de datos
+  isActive: boolean;
+
   @OneToMany(() => Role, (role) => role.users)
   roles: Role[];
 
